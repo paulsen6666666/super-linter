@@ -95,11 +95,11 @@ function BuildFileList() {
     debug "Populating the file list with all the files in the ${WORKSPACE_PATH} workspace"
     mapfile -t RAW_FILE_ARRAY < <(find "${WORKSPACE_PATH}" \
     -path "*/node_modules" -prune -o \
-    -path "*/.git" -prune -o \
-    -path "*/.venv" -prune -o \
-    -path "*/.rbenv" -prune -o \
-    -path "*/.terragrunt-cache" -prune -o \
-    -type f 2>&1 |  grep -v -w '\.git' | sort )
+    -path '*/\.git' -prune -o \
+    -path '*/\.venv' -prune -o \
+    -path '*/\.rbenv' -prune -o \
+    -path '*/\.terragrunt-cache' -prune -o \
+    -type f 2>&1 | sort )
   fi
 
   #######################
